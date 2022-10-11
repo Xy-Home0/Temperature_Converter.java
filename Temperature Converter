@@ -1,0 +1,98 @@
+import java.util.Scanner;
+public class Temperature_Converter {
+  
+  public static void main(String[] args) {
+    Scanner scnr = new Scanner(System.in);
+    Scanner num = new Scanner(System.in);
+    
+    System.out.print("Enter a number to be converted: ");
+    int numb = num.nextInt();
+    double nums = numb;
+    
+    System.out.println("\nPress: \nF if Fahrenheit \nC if Celsius \nK if Kelvin \nR if Rankine");
+    
+    System.out.print("\nConvert from = ");
+    String picks = scnr.nextLine();
+    
+    if (picks.equals("F")) {
+      System.out.println("\nPress: \nC if in Celsius \nK if in Kelvin \nR if in Rankine");
+      double F = 0;
+      
+      System.out.print("\nConvert to = ");
+      String picked = scnr.nextLine();
+      
+      if (picked.equals("C")) {
+        double C = ((nums - 32) * 5 / 9);
+        System.out.println(numb + " Fahrenheit = " + C + " Celsius");
+      }
+      else if (picked.equals("K")) {
+        double K = ((nums - 32) * 5 / 9 + 273.15);
+        System.out.println(numb + " Fahrenheit = " + K + " Kelvin");
+      }
+      else if (picked.equals("R")) {
+        double R = (nums + 459.67);
+        System.out.println(numb + " Fahrenheit = " + R + " Rankine");
+      }
+    }
+    else if (picks.equals("C")) {
+      System.out.println("\nPress: \nF if in Fahrenheit \nK if in Kelvin \nR if in Rankine");
+      double C = 0;
+    
+      System.out.print("\nConvert to = ");
+      String picked = scnr.nextLine();
+      
+      if (picked.equals("F")) {
+        double F = ((nums * 9 / 5) + 32);
+        System.out.println(numb + " Celsius = " + F + " Fahrenheit");
+      }
+      else if (picked.equals("K")) {
+        double K = (nums + 273.15);
+        System.out.println(numb + " Celsius = " + K + " Kelvin");
+      }
+      else if (picked.equals("R")) {
+        double R = ((nums * 9 / 5) + 491.67);
+        System.out.println(numb + " Celsius = " + R + " Rankine");
+      }
+    }
+    else if (picks.equals("K")) {
+      System.out.println("\nPress: \nF if in Fahrenheit \nC if in Celsius \nR if in Rankine");
+      double K = 0;
+    
+      System.out.print("\nConvert to = ");
+      String picked = scnr.nextLine();
+      
+      if (picked.equals("C")) {
+        double C = (nums - 273.15);
+        System.out.println(numb + " Kelvin = " + C + " Celsius");
+      }
+      else if (picked.equals("F")) {
+        double F = ((nums - 273.15) * 9 / 5 + 32);
+        System.out.println(numb + " Kelvin = " + F + " Fahrenheit");
+      }
+      else if (picked.equals("R")) {
+        double R = (nums * 1.8);
+        System.out.println(numb + " Kelvin = " + R + " Rankine");
+      }
+    }
+    else if (picks.equals("R")) {
+      System.out.println("\nPress: \nF if in Fahrenheit \nC if in Celsius \nK if in Kelvin");
+      double R = 0;
+      
+      System.out.print("\nConvert to = ");
+      String picked = scnr.nextLine();
+      
+      if (picked.equals("F")) {
+        double F = (nums - 459.67);
+        System.out.println(numb + " Rankine = " + F + " Fahrenheit");
+      }
+      else if (picked.equals("C")) {
+        double C = ((nums - 491.67) * 5 / 9);
+        System.out.println(numb + " Rankine = " + C + " Celsius");
+      }
+      else if (picked.equals("K")) {
+        double K = (nums * 5 / 9);
+        System.out.println(numb + " Rankine = " + K + " Kelvin");
+      }
+    }
+  }
+}
